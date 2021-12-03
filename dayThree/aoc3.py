@@ -1,73 +1,28 @@
-import collections
 
 
 with open("input.txt") as f:
     lines = f.read()
 
+print(lines)
+
 diagnostic = [s for s in lines.split() if s.isdigit()]
 
-
-
-print(diagnostic)
-index= []
-newBinary =[]
-for num in diagnostic:
-      for i in range(len(num)):
-            index.append(num[2])
-
-print(index)
-ones = index.count('0')
-zeros = index.count('1')
-
-if ones > zeros:
-      print('1')
-else:
-      print('0')
-
-# counter=collections.Counter(int(index))
-# print(counter.keys)
-
-
-
-# with open("input.txt") as f:
-#     lines = f.read()
-
-
-
-# diagnostic = [s for s in lines.split() if s.isdigit()]
 # print(diagnostic)
+gamma =''
 
-# newBinary=''
-# for num in diagnostic:
-#       for i in num:
-#             if num[i] == '1':
-#                   ne
+for i in range(len(diagnostic[0])):
 
-
-# diagnostic = [s for s in lines.split() if s.isdigit()]
-
-# print(len(diagnostic))
-
-# for bi in diagnostic:
-#       for i in range(bi):
-#             if bi[i]
-
-# def calcualte_diagnostic(lines):
-      # index = 0
-      # newBinary = ''
+      index = [x[i] for x in diagnostic]
+      most_common = max(set(index), key = index.count)
+      gamma+=most_common
 
 
-      #       if binary[index] == '1':
-      #             newBinary += '1'
+print(gamma)
+opposite = { '0':'1', '1':'0'}
+rev = [''.join(opposite[c] for c in n) for n in gamma]
+print(rev)
+epsilon = ''.join([str(elem) for elem in rev])
+print(epsilon)
 
-      #       if binary[index] == '0':
-      #             newBinary += '0'
-
-      # split = []
-      # n = 12
-      # for i in range(0, len(newBinary), n):
-      #       split.append(newBinary[i: i + n])
-      # print (split)
-
-
-# calcualte_diagnostic(lines)
+result = int(gamma,2) * int(epsilon,2)
+print(result)
