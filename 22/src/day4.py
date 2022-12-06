@@ -37,9 +37,6 @@ def find_overlap_at_all(arr):
     upper = l2.split('-')
     lower = [int(n) for n in lower]
     upper = [int(n) for n in upper]
-    print('lower', lower)
-    print('upper', upper)
-    print()
     if (lower[1] >= upper[0] and upper[1] >= lower[0]):
         return True
     else:
