@@ -8,17 +8,11 @@ def import_data(input):
 
 rucksacks = import_data('./input/day3.txt')
 
-# print(data[:2])
-# print(ord('a') - 96)
-# print(ord('A') - 38)
-# print(ord('v') - ord('V'))
-# string = "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL"
-
 def split(string):
     x = len(string)
     s1 = slice(0, x//2)
     s2 = slice(x//2, x)
-    return s1, s2       
+    return s1, s2
 
 def find_match(a, b):
     for _, ca in enumerate(a):
@@ -38,17 +32,7 @@ def part1(rucksacks):
         sum_of_prios += return_prio(find_match(sack[split(sack)[0]],sack[split(sack)[1]]))
     return sum_of_prios
 
-
-# group = """
-# vJrwpWtwJgWrhcsFMMfFFhFp
-# jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
-# PmmdzqPrVvPwwTWBwg
-# wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
-# ttgJtRGJQctTZtZT
-# CrZsJsPPZsGzwwsLwLmpwMDw
-# """
-
-# vars = [sack for sack in group.splitlines() if sack]
+# ********************** PART 2 **********************
 
 def find_match_in_group(a, b, c):
     for _, ca in enumerate(a):
