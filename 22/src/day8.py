@@ -1,6 +1,3 @@
-import itertools
-
-
 input_data = """30373
 25512
 65332
@@ -45,9 +42,9 @@ for col_n in range(width):
             tallest = data[row_n][col_n]
             visible[row_n][col_n] = True
 
-i= 0
+cnt = 0
 for rows in visible:
     for columns in rows:
         if columns == True:
-            i+=1
-print(i)
+            cnt+=1
+print(cnt)
